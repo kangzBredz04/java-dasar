@@ -16,10 +16,10 @@ public class UjiCobaTugasSatu {
         System.out.println("Isi ArrayList sebelum dihapus: " + namaList);
 
         // Hapus data nama pada indeks 2
-        // namaList.remove(3);
+        namaList.removeAll(namaList);
 
         // Ubah data nama pada indeks 2
-        namaList.set(2, "Cuci");
+        // namaList.set(2, "Cuci");
 
         // Cetak isi ArrayList setelah dihapus
         System.out.println("Isi ArrayList setelah dihapus: " + namaList);

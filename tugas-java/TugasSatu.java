@@ -125,6 +125,16 @@ public class TugasSatu {
     }
 
     private static void hapusSemuaNama(ArrayList<String> daftarNama) {
+        Scanner in = new Scanner(System.in);
         String yaTidak;
+        System.out.print("Apakah anda yakin akan menghapus semua nama (ya/tidak) ? ");
+        yaTidak = in.nextLine();
+
+        // Menentukan kondisi
+        if (yaTidak.equalsIgnoreCase("ya")) {
+            daftarNama.removeAll(daftarNama);
+        } else if (yaTidak.equalsIgnoreCase("tidak")) {
+            System.out.println("Oke terima kasih");
+        }
     }
 }
