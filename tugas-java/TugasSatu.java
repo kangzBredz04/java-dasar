@@ -16,8 +16,9 @@ public class TugasSatu {
             System.out.println("2. Tambah Nama Arisan Qurban");
             System.out.println("3. Ubah Nama Arisan Qurban");
             System.out.println("4. Hapus Nama Arisan Qurban");
-            System.out.println("5. Tampil Nama Pemenang Arisan Qurban");
-            System.out.println("6. Keluar Program");
+            System.out.println("5. Hapus Semua Nama Arisan Qurban");
+            System.out.println("6. Tampil Nama Pemenang Arisan Qurban");
+            System.out.println("7. Keluar Program");
             System.out.print("Pilih menu : ");
             pilih = in.nextInt();
 
@@ -32,12 +33,18 @@ public class TugasSatu {
                 case 3:
                     ubahNama(daftarNama);
                     break;
+                case 4:
+                    hapusNama(daftarNama);
+                    break;
+                case 5:
+                    hapusSemuaNama(daftarNama);
+                    break;
                 default:
                     System.out.println("---------- SEKIAN DAN TERIMA KASIH ----------");
                     break;
             }
 
-        } while (pilih != 4);
+        } while (pilih != 7);
         in.close();
     }
 
@@ -65,6 +72,7 @@ public class TugasSatu {
         // inNama.close();
     }
 
+    // Methon untuk mengubah nama peserta arisan qurban berdasarkan nomor peserta
     private static void ubahNama(ArrayList<String> daftarNama) {
         System.out.println("---------- UBAH NAMA ARISAN QURBAN ----------");
         Scanner in = new Scanner(System.in);
@@ -90,5 +98,33 @@ public class TugasSatu {
                 System.out.println("Nama berhasil diubah !!!");
             }
         }
+    }
+
+    // Method untuk menghapus nama peeset berdasarkan nomor urut peserta arisan
+    private static void hapusNama(ArrayList<String> daftarNama) {
+        System.out.println("---------- HAPUS NAMA ARISAN QURBAN ----------");
+        Scanner in = new Scanner(System.in);
+
+        if (daftarNama.isEmpty()) {
+            System.out.println("Data masih kosong");
+        } else {
+            System.out.println("---------- DAFTAR NAMA ARISAN QURBAN ----------");
+            for (int i = 0; i < daftarNama.size(); i++) {
+                System.out.format("%d. %s\n", i + 1, daftarNama.get(i));
+            }
+
+            System.out.print("Masukan nomor urut peserta : ");
+            int nomor = in.nextInt();
+            if (nomor < 1 || nomor > daftarNama.size()) {
+                System.out.println("Nomor peserta yang diinput tidak ada !!!");
+            } else {
+                daftarNama.remove(nomor - 1);
+                System.out.println("Nama berhasil dihapus !!!");
+            }
+        }
+    }
+
+    private static void hapusSemuaNama(ArrayList<String> daftarNama) {
+        String yaTidak;
     }
 }
