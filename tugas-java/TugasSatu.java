@@ -1,6 +1,7 @@
 // package tugas-java;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TugasSatu {
@@ -38,6 +39,9 @@ public class TugasSatu {
                     break;
                 case 5:
                     hapusSemuaNama(daftarNama);
+                    break;
+                case 6:
+                    tampilPemenang(daftarNama);
                     break;
                 default:
                     System.out.println("---------- SEKIAN DAN TERIMA KASIH ----------");
@@ -100,7 +104,7 @@ public class TugasSatu {
         }
     }
 
-    // Method untuk menghapus nama peeset berdasarkan nomor urut peserta arisan
+    // Method untuk menghapus nama peserta berdasarkan nomor urut peserta arisan
     private static void hapusNama(ArrayList<String> daftarNama) {
         System.out.println("---------- HAPUS NAMA ARISAN QURBAN ----------");
         Scanner in = new Scanner(System.in);
@@ -124,6 +128,7 @@ public class TugasSatu {
         }
     }
 
+    // Method untuk menghapus semua nama peserta arisan qurban
     private static void hapusSemuaNama(ArrayList<String> daftarNama) {
         Scanner in = new Scanner(System.in);
         String yaTidak;
@@ -136,5 +141,19 @@ public class TugasSatu {
         } else if (yaTidak.equalsIgnoreCase("tidak")) {
             System.out.println("Oke terima kasih");
         }
+    }
+
+    // Method untuk menampilkan pemenang arisan
+    private static void tampilPemenang(ArrayList<String> daftarNama) {
+        // Variable untuk mengahasilkan angka acak
+        Random random = new Random();
+        // Dapatkan indeks acak
+        int indeksAcak = random.nextInt(daftarNama.size());
+
+        // Tampilkan nama pada indeks acak
+        System.out.println("Selamat Kepada Pemenang : " + daftarNama.get(indeksAcak));
+
+        // Menghapus nama pemenang
+        daftarNama.remove(indeksAcak);
     }
 }
