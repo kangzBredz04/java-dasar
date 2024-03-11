@@ -1,3 +1,4 @@
+package TehDian;
 class pegawai {
 
     String[] idPegawai = { "001", "002" };

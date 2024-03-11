@@ -1,3 +1,4 @@
+package TehDian;
 import java.util.Scanner;
 
 public class KuisTiga {
