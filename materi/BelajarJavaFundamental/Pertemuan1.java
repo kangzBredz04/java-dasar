@@ -1,5 +1,7 @@
 package BelajarJavaFundamental;
 
+import java.util.ArrayList;
+
 public class Pertemuan1 {
     public static void main(String[] args) {
         // Print: Hanya mencetak teks tanpa menambahkan baris baru di akhir.
@@ -24,5 +26,24 @@ public class Pertemuan1 {
         // printf
         System.out.printf("Nama: %s, Usia: %d\n", nama, usia);
 
+        // ArrayList adalah salah satu struktur data yang paling umum digunakan dalam
+        // Java. ArrayList adalah collection yang dinamis yang dapat menyimpan elemen
+        // data dengan tipe yang sama.
+
+        // Membuat arraylist
+        ArrayList<String> names = new ArrayList<>();
+
+        // Menambahkan elemen
+        names.add("Andi");
+        names.add("Budi");
+        names.add(1, "Cici");
+
+        System.out.println(names); // [Andi, Cici, Budi]
+
+        // Menghapus elemen
+        names.remove("Andi"); // menghapus berdasarakan elemen pertama yang ditemukan dalam ArrayList.
+        names.remove(1); // Menghapus elemen pada indeks yang ditentukan.
+
+        System.out.println(names); // [Cici]
     }
 }
