@@ -24,7 +24,6 @@ public class Pertemuan2 {
 
         // SWITCH CASE
         int number = 1;
-
         switch (number) {
             case 1:
                 System.out.println("Satu");
@@ -36,5 +35,17 @@ public class Pertemuan2 {
                 System.out.println("Bukan satu atau dua");
         }
 
+        // Switch lambda adalah fitur baru di Java 12 yang memungkinkan untuk
+        // menggunakan lambda expression dalam pernyataan switch. Lambda expression
+        // adalah cara yang ringkas untuk menulis anonymous function.
+
+        String b = "B";
+        String ket = switch (b) {
+            case "A":
+                yield ket = "Sehat";
+            default:
+                yield ket = "Oke";
+        };
+        System.out.println(ket);
     }
 }
