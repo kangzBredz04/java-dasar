@@ -65,5 +65,30 @@ public class Pertemuan2 {
         String grade = (score >= 90) ? "A" : ((score >= 80) ? "B" : "C");
         System.out.println(grade); // Output: B
 
+        // LOGIKA PERULANGAN
+        // Logika perulangan digunakan untuk menjalankan blok kode berulang kali, selama
+        // kondisi tertentu terpenuhi.
+
+        // FOR ==> Digunakan untuk mengulang blok kode dengan jumlah yang diketahui.
+        // for (int i = 0; i < 5; i++) {
+        // System.out.println("Hello, world!");
+        // }
+
+        // WHILE ==> Digunakan untuk mengulang blok kode selama kondisi tertentu
+        // terpenuhi.
+        // int i = 0;
+        // while (i < 5) {
+        // System.out.println("Hello, world!");
+        // i++;
+        // }
+
+        // DO WHILE ==> Digunakan untuk mengulang blok kode minimal satu kali, kemudian
+        // mengulanginya lagi selama kondisi terpenuhi.
+        int i = 0;
+        do {
+            System.out.println("Hello, world!");
+            i++;
+        } while (i < 5);
+
     }
 }
