@@ -47,5 +47,23 @@ public class Pertemuan2 {
                 yield ket = "Oke";
         };
         System.out.println(ket);
+
+        // TERNARY OPERATOR
+        // Ternary operator adalah bentuk sederhana dari if else
+        // Terdiri dari kondisi yang dievaluasi,jika menghasilkan true maka nilai
+        // pertama diambil jika false maka nilai kedua yang diambil
+        // Contoh
+        int angka = 10;
+        String hasil = (angka % 2 == 0) ? "Genap" : "Ganjil";
+        System.out.println("Angka " + angka + " adalah " + hasil);
+
+        int umur = 20;
+        String message = (umur >= 18) ? "Anda cukup umur" : "Anda belum cukup umur";
+        System.out.println(message); // Output: Anda cukup umur
+
+        int score = 85;
+        String grade = (score >= 90) ? "A" : ((score >= 80) ? "B" : "C");
+        System.out.println(grade); // Output: B
+
     }
 }
