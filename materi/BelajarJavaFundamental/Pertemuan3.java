@@ -35,6 +35,22 @@ package BelajarJavaFundamental;
 // 2. Objek (Object)
 // Objek adalah instansi dari suatu kelas. Dalam Java, objek diciptakan
 // menggunakan kata kunci `new`.
+
+class Buku {
+    String name;
+    int harga;
+
+    // Constructor tanpa parameter
+    Buku() {
+        System.out.println("Ini kelas buku");
+    }
+
+    // Constructor dengan parameter
+    Buku(String nama) {
+        System.out.println("Ini kelas " + nama);
+    }
+}
+
 public class Pertemuan3 {
     public static void main(String[] args) {
         // // Membuat objek dari kelas Mobil
@@ -47,6 +63,15 @@ public class Pertemuan3 {
 
         // // Memanggil metode objek
         // mobil1.infoMobil();
+
+        // Constructor
+        // Constructor dibuat didalam suatu class yang penamaan nya sama dengan nama
+        // classnya, Constructor adalah method yang pertama kali dipanggil saat object
+        // dibuat, Bisa menambahkan parameter, Constructor tidak memiliki return value
+        // dan tidak menggunakan keyword void
+
+        Buku buku1 = new Buku();
+        Buku buku2 = new Buku("Wahyu");
     }
 }
 
