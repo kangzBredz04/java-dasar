@@ -192,3 +192,11 @@ class Anjing extends Hewan {
         System.out.println("Guk guk!");
     }
 }
+
+// Acces Modifier
+// Access modifier adalah hak akses suatu class terhadap class lain
+
+// - Private = class yang sama
+// - Default = class yang sama, package yang sama
+// - Protected = class yang sama, package yang sama, subclass
+// - Publis = class yang sama, packgae yang sama, subclass, class manapun
