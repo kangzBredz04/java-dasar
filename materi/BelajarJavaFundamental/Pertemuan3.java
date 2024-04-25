@@ -41,3 +41,35 @@ public class Pertemuan3 {
         mobil1.infoMobil();
     }
 }
+
+// 3. Enkapsulasi (Encapsulation)
+// Enkapsulasi adalah konsep menyembunyikan rincian implementasi internal objek
+// dan hanya mengekspos fungsionalitas yang relevan.
+class Mobil {
+    // Atribut
+    String merek;
+    String warna;
+    int tahunProduksi;
+
+    // Metode
+    void infoMobil() {
+        System.out.println("Mobil " + merek + " berwarna " + warna + " diproduksi pada tahun " + tahunProduksi);
+    }
+
+    // Contoh enkapsulasi
+    void setMerek(String merek) {
+        this.merek = merek;
+    }
+
+    String getMerek() {
+        return merek;
+    }
+
+    void setTahunProduksi(int tahunProduksi) {
+        this.tahunProduksi = tahunProduksi;
+    }
+
+    int getTahunProduk() {
+        return tahunProduksi;
+    }
+}
