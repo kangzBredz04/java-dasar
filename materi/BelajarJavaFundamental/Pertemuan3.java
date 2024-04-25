@@ -73,3 +73,28 @@ class Mobil {
         return tahunProduksi;
     }
 }
+
+// 4. Pewarisan (Inheritance)
+// Pewarisan adalah konsep dimana sebuah kelas dapat mewarisi atribut dan metode
+// dari kelas lain.
+// Contoh inheritance
+class Sedan extends Mobil {
+    private int jumlahPintu;
+
+    public void setJumlahPintu(int jumlahPintu) {
+        this.jumlahPintu = jumlahPintu;
+    }
+
+    public int getJumlahPintu() {
+        return jumlahPintu;
+    }
+
+    // Contoh inheritance
+    void setTahunProduksi(int tahunProduksi) {
+        this.tahunProduksi = tahunProduksi;
+    }
+
+    int getTahunProduk() {
+        return tahunProduksi;
+    }
+}
