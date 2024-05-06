@@ -3,23 +3,18 @@ import java.util.ArrayList;
 /**
  * InnerTugasCRUDDataMahasiswa
  */
-interface DataMahasiswa {
+interface CRUD {
 
-    // Methode
-    String getNama();
+    void create();
 
-    void setNama(String name);
+    void read();
 
-    String getNim();
+    void update();
 
-    void setNim();
-
-    int getUmur();
-
-    void setUmur();
+    void delete();
 }
 
-abstract class mahasiswa implements DataMahasiswa {
+abstract class mahasiswa {
     private String nama;
     private String nim;
     private int umur;
@@ -30,55 +25,35 @@ abstract class mahasiswa implements DataMahasiswa {
         this.umur = umur;
     }
 
-    abstract void pilMenu();
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getNim() {
+        return nim;
+    }
+
+    public void setNim(String nim) {
+        this.nim = nim;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
 }
 
 class prosesProgram extends mahasiswa {
 
     public prosesProgram(String nama, String nim, int umur) {
         super(nama, nim, umur);
-    }
-
-    @Override
-    public String getNama() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNama'");
-    }
-
-    @Override
-    public void setNama(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setNama'");
-    }
-
-    @Override
-    public String getNim() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNim'");
-    }
-
-    @Override
-    public void setNim() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setNim'");
-    }
-
-    @Override
-    public int getUmur() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUmur'");
-    }
-
-    @Override
-    public void setUmur() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setUmur'");
-    }
-
-    @Override
-    void pilMenu() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pilMenu'");
     }
 
 }
