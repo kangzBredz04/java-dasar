@@ -50,7 +50,7 @@ class mahasiswa {
     }
 
     public int getUmur() {
-        retufeat: Add feature to add and display student datarn umur;
+        return umur;
     }
 
     public void setUmur(int umur) {
