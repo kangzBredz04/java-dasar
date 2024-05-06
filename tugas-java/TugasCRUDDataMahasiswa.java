@@ -69,7 +69,7 @@ class prosesProgram implements CRUD {
     mahasiswa mhs = new mahasiswa();
 
     Scanner in = new Scanner(System.in);
-    int pilMenu, noUrut = 1;
+    int pilMenu, noUrut = 1, indexData;
 
     @Override
     public void startProgram() {
@@ -123,8 +123,19 @@ class prosesProgram implements CRUD {
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        if (dataMahasiswa.size() > 0) {
+            for (mahasiswa m : dataMahasiswa) {
+                m.displayData(noUrut);
+                noUrut++;
+            }
+            System.out.print("Masukan nomor urut : ");
+            indexData = in.nextInt();
+            mahasiswa getMhs = dataMahasiswa.get(indexData);
+            getMhs.displayData(indexData);
+        } else {
+            System.out.println("--- Tidak ditemukan data mahasiswa ---");
+        }
+
     }
 
     @Override
