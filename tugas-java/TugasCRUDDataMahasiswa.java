@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -26,6 +27,9 @@ abstract class mahasiswa {
         this.umur = umur;
     }
 
+    public mahasiswa() {
+    }
+
     public String getNama() {
         return nama;
     }
@@ -51,15 +55,22 @@ abstract class mahasiswa {
     }
 
     abstract void startProgram();
+
+    abstract void displayData();
 }
 
 class prosesProgram extends mahasiswa implements CRUD {
+
+    List<mahasiswa> dataMahasiswa = new ArrayList<>();
 
     Scanner in = new Scanner(System.in);
     int pilMenu;
 
     public prosesProgram(String nama, String nim, int umur) {
         super(nama, nim, umur);
+    }
+
+    public prosesProgram() {
     }
 
     @Override
@@ -86,13 +97,26 @@ class prosesProgram extends mahasiswa implements CRUD {
 
     @Override
     public void create() {
-
+        String nama, nim;
+        int umur;
+        System.out.print("Masukan nama : ");
+        nama = in.nextLine();
+        System.out.print("Masukan nim : ");
+        nim = in.nextLine();
+        System.out.print("Masukan umur : ");
+        umur = in.nextInt();
+        dataMahasiswa.add(new mahasiswa(nama, nim, umur));
     }
 
     @Override
     public void read() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
+        if (dataMahasiswa.size() > 0) {
+            for (mahasiswa m : dataMahasiswa) {
+                m.displayData();
+            }
+        } else {
+            System.out.println("--- Tidak ditemukan data mahasiswa ---");
+        }
     }
 
     @Override
@@ -107,10 +131,16 @@ class prosesProgram extends mahasiswa implements CRUD {
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
 
+    @Override
+    void displayData() {
+        System.out.println(getNama() + " - " + getNim() + " - " + getUmur());
+    }
+
 }
 
 public class TugasCRUDDataMahasiswa {
     public static void main(String[] args) {
-        
+        prosesProgram x = new prosesProgram();
+        x.startProgram();
     }
 }
