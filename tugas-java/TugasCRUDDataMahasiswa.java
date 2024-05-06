@@ -14,9 +14,12 @@ interface CRUD {
     void update();
 
     void delete();
+
+    void startProgram();
+
 }
 
-abstract class mahasiswa {
+class mahasiswa {
     private String nama;
     private String nim;
     private int umur;
@@ -47,34 +50,29 @@ abstract class mahasiswa {
     }
 
     public int getUmur() {
-        return umur;
+        retufeat: Add feature to add and display student datarn umur;
     }
 
     public void setUmur(int umur) {
         this.umur = umur;
     }
 
-    abstract void startProgram();
+    void displayData(int noUrut) {
+        System.out.println(noUrut + ". " + getNama() + " - " + getNim() + " - " + getUmur());
+    }
 
-    abstract void displayData();
 }
 
-class prosesProgram extends mahasiswa implements CRUD {
+class prosesProgram implements CRUD {
 
-    List<mahasiswa> dataMahasiswa = new ArrayList<>();
+    ArrayList<mahasiswa> dataMahasiswa = new ArrayList<>();
+    mahasiswa mhs = new mahasiswa();
 
     Scanner in = new Scanner(System.in);
-    int pilMenu;
-
-    public prosesProgram(String nama, String nim, int umur) {
-        super(nama, nim, umur);
-    }
-
-    public prosesProgram() {
-    }
+    int pilMenu, noUrut = 1;
 
     @Override
-    void startProgram() {
+    public void startProgram() {
         while (true) {
             System.out.println("---------------------------------------");
             System.out.println(
@@ -95,10 +93,13 @@ class prosesProgram extends mahasiswa implements CRUD {
         }
     }
 
+    @SuppressWarnings("unused") // sebuah anotasi di Java yang memberi tahu kompiler untuk mengabaikan kesalahan
+                                // yang mungkin muncul terkait dengan penggunaan variabel yang tidak digunakan.
     @Override
     public void create() {
         String nama, nim;
         int umur;
+        nama = in.nextLine();
         System.out.print("Masukan nama : ");
         nama = in.nextLine();
         System.out.print("Masukan nim : ");
@@ -112,7 +113,8 @@ class prosesProgram extends mahasiswa implements CRUD {
     public void read() {
         if (dataMahasiswa.size() > 0) {
             for (mahasiswa m : dataMahasiswa) {
-                m.displayData();
+                m.displayData(noUrut);
+                noUrut++;
             }
         } else {
             System.out.println("--- Tidak ditemukan data mahasiswa ---");
@@ -129,11 +131,6 @@ class prosesProgram extends mahasiswa implements CRUD {
     public void delete() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
-    }
-
-    @Override
-    void displayData() {
-        System.out.println(getNama() + " - " + getNim() + " - " + getUmur());
     }
 
 }
